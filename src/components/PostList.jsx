@@ -1,20 +1,21 @@
 // src/components/PostList.js
 import React, { useState, useEffect } from 'react';
 import CommentList from './CommentList';
-const PostList = ({ filteredPosts,onSelectPost,filter,setFilter}) => {
+import {TextField} from '@mui/material';
+const PostList = ({ filteredPosts,filter,setFilter}) => {
   return (
-    <div className="post-list">
-      <input
-        type="number"
-        placeholder="Filter by postId"
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-      />
+    <div style={{height:"100vh",overflowY:"scroll",paddingBlock:"2.5rem"}}>
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <TextField id="outlined-basic" type="number" label="Filter by postId" variant="outlined" onChange={(e) => setFilter(e.target.value)}
+    />
+    </div>
+    <div className="post-list" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
       <div>
-        {filteredPosts.map(post => (
-          <CommentList post={post}/>
+        {filteredPosts.map((post,index) => (
+          <CommentList post={post} index={index}/>
         ))}
       </div>
+    </div>
     </div>
   );
 };

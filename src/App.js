@@ -55,7 +55,6 @@ function App() {
   return (
     <div className="app">
       <PostList filteredPosts={filteredPosts} onSelectPost={setSelectedPost} filter={filter} setFilter={setFilter}/>
-      <CommentList comments={comments} />
     </div>
   );
 }
