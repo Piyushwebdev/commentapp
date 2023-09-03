@@ -1,8 +1,8 @@
 // src/components/CommentList.js
 import React from "react";
-
-const CommentList = ({ post,setShowComment,showComment }) => {
-  console.log(post,showComment)
+import { useState } from "react";
+const CommentList = ({ post }) => {
+  const [showComment,setShowComment]=useState(false)
   return (
     <div
       key={post?.id}

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import CommentList from './CommentList';
 const PostList = ({ filteredPosts,onSelectPost,filter,setFilter}) => {
-  const [showComment,setShowComment]=useState(false)
   return (
     <div className="post-list">
       <input
@@ -13,7 +12,7 @@ const PostList = ({ filteredPosts,onSelectPost,filter,setFilter}) => {
       />
       <div>
         {filteredPosts.map(post => (
-          <CommentList setShowComment={setShowComment} showComment={showComment} post={post}/>
+          <CommentList post={post}/>
         ))}
       </div>
     </div>
